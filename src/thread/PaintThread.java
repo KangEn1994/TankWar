@@ -5,7 +5,16 @@ import Main.GamePanel;
 
 public class PaintThread extends Thread{
 	private GamePanel gp;
+	private boolean flag=true;
 	
+	public boolean isFlag() {
+		return flag;
+	}
+
+	public void setFlag(boolean flag) {
+		this.flag = flag;
+	}
+
 	public GamePanel getGp() {
 		return gp;
 	}
@@ -16,7 +25,7 @@ public class PaintThread extends Thread{
 
 	@Override
 	public void run() {
-		while(true){
+		while(flag){
 			gp.repaint();
 			try{
 				Thread.sleep(200);

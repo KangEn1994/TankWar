@@ -2,48 +2,42 @@ package Main;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Panel;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import thread.PaintThread;
 import entity.MapEdit;
+import entrance.TankClient;
 
 public class GamePanel extends Panel{
-	private MapEdit mapEdit=new MapEdit();
+	
+	private TankClient tc;
+	private Image offScreenImage=null;
+	private PaintThread myThread;
+	
+	public PaintThread getMyThread() {
+		return myThread;
+	}
+
+	public void setMyThread(PaintThread myThread) {
+		this.myThread = myThread;
+	}
+	public Image getOffScreenImage() {
+		return offScreenImage;
+	}
+	public void setOffScreenImage(Image offScreenImage) {
+		this.offScreenImage = offScreenImage;
+	}
+	public TankClient getTc() {
+		return tc;
+	}
+	public void setTc(TankClient tc) {
+		this.tc = tc;
+	}
 	public void showPanel(){
-		setBackground(Color.BLACK);
-		setBounds(32,67, 416, 416);
-		setVisible(true);
-		setLayout(null);
-		addKeyListener(new KeyMonitor());
-		PaintThread  pt=new PaintThread();
-		pt.setGp(this);
-		pt.start();
+
 	}
-	public void paint(Graphics g) {
-
-		mapEdit.paint(g);
-	}
-	public class KeyMonitor implements KeyListener{
-
-		@Override
-		public void keyTyped(KeyEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void keyPressed(KeyEvent e) {
-			// TODO Auto-generated method stub
-			mapEdit.move(e);
-		}
-
-		@Override
-		public void keyReleased(KeyEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-		
-	}
+	
 }

@@ -5,26 +5,40 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 
+import Main.GamePanel;
+import Main.MapEditPanel;
+import Main.WelcomePanel;
 import entrance.TankClient;
-
+/*
+ * @author uncleYiba
+ * @describe 欢迎页面/开始页面 的 选择用图标(小坦克)
+ * @date 2018/01/25
+ */
 public class SelectTank {
 	private int selectShow=0;
 	private int[] xLoca={100,100,100};
 	private int[] yLoca={225,255,285};
 	private int index=0;
+	private WelcomePanel wp;
+	public SelectTank(WelcomePanel wp) {
+		this.wp=wp;
+	}
 	public void move(KeyEvent e){
 		switch (e.getKeyCode()) {
 			case KeyEvent.VK_X:
 				index++;
 				break;
+			case KeyEvent.VK_Z:
+				if (index==2){
+					GamePanel gp=new MapEditPanel();
+					TankClient tc=wp.getTc();
+					tc.replaceNewGamePanel(gp);
+				}
+				break;
 		}
 		if (index==3) index=0;
 	}
 	public void paint(Graphics g){
-		String url="pic/"+Terrain.terrainMap.get("welcome");
-		Image img=Toolkit.getDefaultToolkit().getImage(url); 
-		g.drawImage(img, 0, 0,null);
-		
 		String url2="pic/"+Terrain.terrainMap.get("select1");
 		Image img2=Toolkit.getDefaultToolkit().getImage(url2); 
 		

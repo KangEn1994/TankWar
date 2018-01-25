@@ -11,6 +11,7 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import Main.MapEditPanel;
 import entrance.TankClient;
 
 /*
@@ -22,6 +23,12 @@ public class MapEdit {
 	private int xLoca=0,yLoca=0;
 	private int xSpeed=32,ySpeed=32;
 	private int show=0;
+	private MapEditPanel mep;
+	
+	
+	public MapEdit(MapEditPanel mep) {
+		this.mep=mep;
+	}
 	public void move(KeyEvent e){
 		switch (e.getKeyCode()) {
 			case KeyEvent.VK_UP:
@@ -60,7 +67,7 @@ public class MapEdit {
 			url="pic/"+Terrain.terrainMap.get("mapEdit");
 			show++;
 		}else{
-			url="pic/"+Terrain.terrainMap.get("nothing");
+			url="pic/"+Terrain.terrainMap.get("homeAround");
 			show++;
 		}
 		if (show==100) show=0;
