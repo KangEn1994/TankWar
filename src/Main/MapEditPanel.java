@@ -18,6 +18,14 @@ public class MapEditPanel extends GamePanel{
 	private MapEdit mapEdit=new MapEdit(this);
 	private GameMap gameMap=new GameMap();
 	
+	
+	
+	public GameMap getGameMap() {
+		return gameMap;
+	}
+	public void setGameMap(GameMap gameMap) {
+		this.gameMap = gameMap;
+	}
 	@Override
 	public void showPanel(){
 		setBackground(Color.BLACK);
@@ -45,14 +53,11 @@ public class MapEditPanel extends GamePanel{
 	public void paint(Graphics g) {
 		for (int i=0;i<26;i++){
 			for (int j=0;j<26;j++){
-				String url="pic/"+Terrain.terrainMap.get(Terrain.terrainMap2.get(gameMap.getMapType()[i][j]));
+				String url="pic/"+Terrain.terrainMap.get(Terrain.terrainMap2.get(gameMap.getMapTypeTwo()[i][j]));
 				Image img=Toolkit.getDefaultToolkit().getImage(url); 
 				g.drawImage(img, j*16, i*16,null);
 			}
 		}
-		
-		
-		
 		mapEdit.paint(g);
 	}
 	
@@ -67,13 +72,13 @@ public class MapEditPanel extends GamePanel{
 		@Override
 		public void keyPressed(KeyEvent e) {
 			// TODO Auto-generated method stub
-			mapEdit.move(e);
+			mapEdit.moveAndBuild(e);
 		}
 
 		@Override
 		public void keyReleased(KeyEvent e) {
 			// TODO Auto-generated method stub
-			
+			mapEdit.stopBuild(e);
 		}
 		
 	}

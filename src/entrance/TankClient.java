@@ -14,8 +14,6 @@ public class TankClient extends Frame{
 	//设置游戏主题部分的大小为416*416
 	public static int GAME_WIDTH=416;
 	public static int GAME_HEIGHT=416;
-	//用于判定当前的GamePanel是哪一个
-	private boolean mep=false,wp=true;
 	//双缓冲用，防止闪屏(参考马士兵老师坦克大战系列视频)
 	Image offScreenImage=null;
 	//当前的GamePanel

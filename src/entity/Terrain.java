@@ -1,5 +1,6 @@
 package entity;
 
+import java.awt.Image;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,5 +41,81 @@ public class Terrain {
 		terrainMap2.put("10","select1");
 		terrainMap2.put("11","select2");
 		terrainMap2.put("12","homeAround");
+	}
+	//地图编译器的地形展示顺序
+	/* 00.黑        01.右木      02.下木     03.左木
+	 * 04.上木    05.全木      06.右钢     07.下钢
+	 * 08.左钢    09.上钢      10.全钢     11.河
+	 * 12.草        13.冰
+	 */
+	//给某一个位置赋值某一种地形展示
+	public static String[] getmapTwoTreeainByMapOneIndex(int index){
+		String[] treeain=new String[4];
+		switch (index){
+			case 0://黑
+				treeain[0]=GameMap.TWO_NOTHING;treeain[1]=GameMap.TWO_NOTHING;
+				treeain[2]=GameMap.TWO_NOTHING;treeain[3]=GameMap.TWO_NOTHING;
+				break;
+			case 1://右木
+				treeain[0]=GameMap.TWO_NOTHING;treeain[1]=GameMap.TWO_WODDEN;
+				treeain[2]=GameMap.TWO_NOTHING;treeain[3]=GameMap.TWO_WODDEN;
+				break;
+			case 2://下木
+				treeain[0]=GameMap.TWO_NOTHING;treeain[1]=GameMap.TWO_NOTHING;
+				treeain[2]=GameMap.TWO_WODDEN;treeain[3]=GameMap.TWO_WODDEN;
+				break;
+			case 3://左木
+				treeain[0]=GameMap.TWO_WODDEN;treeain[1]=GameMap.TWO_NOTHING;
+				treeain[2]=GameMap.TWO_WODDEN;treeain[3]=GameMap.TWO_NOTHING;
+				break;
+			case 4://上木
+				treeain[0]=GameMap.TWO_WODDEN;treeain[1]=GameMap.TWO_WODDEN;
+				treeain[2]=GameMap.TWO_NOTHING;treeain[3]=GameMap.TWO_NOTHING;
+				break;
+			case 5://全木
+				treeain[0]=GameMap.TWO_WODDEN;treeain[1]=GameMap.TWO_WODDEN;
+				treeain[2]=GameMap.TWO_WODDEN;treeain[3]=GameMap.TWO_WODDEN;
+				break;
+			case 6://右钢
+				treeain[0]=GameMap.TWO_NOTHING;treeain[1]=GameMap.TWO_STEEL;
+				treeain[2]=GameMap.TWO_NOTHING;treeain[3]=GameMap.TWO_STEEL;
+				break;
+			case 7://下钢
+				treeain[0]=GameMap.TWO_NOTHING;treeain[1]=GameMap.TWO_NOTHING;
+				treeain[2]=GameMap.TWO_STEEL;treeain[3]=GameMap.TWO_STEEL;
+				break;
+			case 8://左钢
+				treeain[0]=GameMap.TWO_STEEL;treeain[1]=GameMap.TWO_NOTHING;
+				treeain[2]=GameMap.TWO_STEEL;treeain[3]=GameMap.TWO_NOTHING;
+				break;
+			case 9://上钢
+				treeain[0]=GameMap.TWO_STEEL;treeain[1]=GameMap.TWO_STEEL;
+				treeain[2]=GameMap.TWO_NOTHING;treeain[3]=GameMap.TWO_NOTHING;
+				break;
+			case 10://全钢
+				treeain[0]=GameMap.TWO_STEEL;treeain[1]=GameMap.TWO_STEEL;
+				treeain[2]=GameMap.TWO_STEEL;treeain[3]=GameMap.TWO_STEEL;
+				break;
+			case 11://河
+				treeain[0]=GameMap.TWO_RIVER;treeain[1]=GameMap.TWO_RIVER;
+				treeain[2]=GameMap.TWO_RIVER;treeain[3]=GameMap.TWO_RIVER;
+				break;
+			case 12://草
+				treeain[0]=GameMap.TWO_GRASS;treeain[1]=GameMap.TWO_GRASS;
+				treeain[2]=GameMap.TWO_GRASS;treeain[3]=GameMap.TWO_GRASS;
+				break;
+			case 13://冰
+				treeain[0]=GameMap.TWO_ICE;treeain[1]=GameMap.TWO_ICE;
+				treeain[2]=GameMap.TWO_ICE;treeain[3]=GameMap.TWO_ICE;
+				break;
+		}
+		return treeain;
+	}
+	public static int getNextMapOneIndex(int index){
+		index++;
+		if (index==14){
+			index=0;
+		}
+		return index;
 	}
 }

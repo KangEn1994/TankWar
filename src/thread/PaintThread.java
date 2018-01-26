@@ -28,7 +28,7 @@ public class PaintThread extends Thread{
 		while(flag){
 			gp.repaint();
 			try{
-				Thread.sleep(200);
+				Thread.sleep(300);
 			}catch(Exception e){
 				e.printStackTrace();
 			}
