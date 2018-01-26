@@ -20,7 +20,7 @@ public class Terrain {
 		terrainMap.put("grass","grassEach.jpg");//2
 		terrainMap.put("home","home.jpg");//3
 		terrainMap.put("ice","iceEach.jpg");//4
-		terrainMap.put("mapEdit","mapEdit.jpg");//5
+		terrainMap.put("mapEdit","mapEdit.png");//5
 		terrainMap.put("river","riverEach.jpg");//6
 		terrainMap.put("steel","steelEach.jpg");//7
 		terrainMap.put("wodden","woddenEach.jpg");//8
