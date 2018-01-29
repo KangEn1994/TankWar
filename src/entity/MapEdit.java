@@ -13,8 +13,8 @@ import java.io.OutputStream;
 
 import javax.management.monitor.GaugeMonitor;
 
-import Main.MapEditPanel;
 import entrance.TankClient;
+import main.MapEditPanel;
 
 /*
  * @author uncleYiba

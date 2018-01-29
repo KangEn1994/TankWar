@@ -1,7 +1,7 @@
 package thread;
 
 
-import Main.GamePanel;
+import main.GamePanel;
 
 public class PaintThread extends Thread{
 	private GamePanel gp;

@@ -5,10 +5,10 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 
-import Main.GamePanel;
-import Main.MapEditPanel;
-import Main.WelcomePanel;
 import entrance.TankClient;
+import main.GamePanel;
+import main.MapEditPanel;
+import main.WelcomePanel;
 /*
  * @author uncleYiba
  * @describe 欢迎页面/开始页面 的 选择用图标(小坦克)

@@ -80,7 +80,7 @@ public class GameMap {
 		mapTypeTwo[25][13]=GameMap.TWO_HOME_AROUND;
 	}
 	public void setMapOneTerrain(int xLoca,int yLoca,int index){
-		System.out.println("x="+xLoca+",y="+yLoca+",index="+index);
+		//System.out.println("x="+xLoca+",y="+yLoca+",index="+index);
 		
 		if (xLoca==12 && yLoca==6){
 			xLoca=xLoca*2;yLoca=yLoca*2;
@@ -100,7 +100,7 @@ public class GameMap {
 	}
 	public int getMapOneIndex(int xLoca,int yLoca){
 		int n=Integer.parseInt(mapTypeOne[xLoca][yLoca]);
-		System.out.println("("+xLoca+","+yLoca+")位置的mapOne为"+n);
+		//System.out.println("("+xLoca+","+yLoca+")位置的mapOne为"+n);
 		
 		
 		

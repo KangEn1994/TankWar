@@ -6,9 +6,9 @@ import java.awt.Image;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-import Main.GamePanel;
-import Main.MapEditPanel;
-import Main.WelcomePanel;
+import main.GamePanel;
+import main.MapEditPanel;
+import main.WelcomePanel;
 
 public class TankClient extends Frame{
 	//设置游戏主题部分的大小为416*416
