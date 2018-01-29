@@ -1,4 +1,7 @@
 package version1.entity;
+
+import java.awt.Image;
+
 /*
  * @author uncleYiba
  * @describe 方块，每一个地图的格子
@@ -7,6 +10,21 @@ package version1.entity;
 public class Square {
 	private int xLoca,yLoca;//坐标，统一采用右为x，下为y的坐标系
 	private int maxSizeX,maxSizeY;//x,y轴方向最大分割尺寸
+	private Image image;
+	private int[][] squareMakeUp;
+	
+	public int[][] getSquareMakeUp() {
+		return squareMakeUp;
+	}
+	public void setSquareMakeUp(int[][] squareMakeUp) {
+		this.squareMakeUp = squareMakeUp;
+	}
+	public Image getImage() {
+		return image;
+	}
+	public void setImage(Image image) {
+		this.image = image;
+	}
 	public int getxLoca() {
 		return xLoca;
 	}

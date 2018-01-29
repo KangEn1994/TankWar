@@ -27,7 +27,10 @@ public class GamePanel extends Panel{
 	
 	//INDEX_GAME_START用
 	private int yIndex=416;
-	private SelectTank st=new SelectTank();
+	private SelectTank st=new SelectTank(this);
+	
+	//INDEX_MAP_EDIT
+	//需要一个编辑坦克，一个地图
 	
 	public Image getOffScreenImage() {
 		return offScreenImage;
@@ -104,6 +107,25 @@ public class GamePanel extends Panel{
 		}
 		@Override
 		public void keyPressed(KeyEvent e) {
+			if (index==GamePanel.INDEX_GAME_START && yIndex>0 && (e.getKeyCode()==KeyEvent.VK_J ||e.getKeyCode()==KeyEvent.VK_K)){
+				yIndex=0;
+			}else{
+				switch (index){
+					case GamePanel.INDEX_GAME_START:
+						st.move(e);
+						break;
+					case GamePanel.INDEX_MAP_EDIT:
+						break;
+					case GamePanel.INDEX_BEFORE_ROOM:
+						break;
+					case GamePanel.INDEX_GAME_ROOM:
+						break;
+					case GamePanel.INDEX_AFTER_ROOM:
+						break;
+					
+				}
+				
+			}
 		}
 		@Override
 		public void keyReleased(KeyEvent e) {

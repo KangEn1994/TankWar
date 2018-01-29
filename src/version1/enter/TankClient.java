@@ -19,7 +19,6 @@ public class TankClient extends Frame{
 		//设置关闭监听
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
-				// TODO Auto-generated method stub
 				System.exit(0);
 			}
 		});

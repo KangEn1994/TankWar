@@ -5,6 +5,8 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 
+import version1.enter.GamePanel;
+
 
 /*
  * @author uncleYiba
@@ -16,8 +18,9 @@ public class SelectTank {
 	private int[] xLoca={100,100,100};
 	private int[] yLoca={225,255,285};
 	private int index=0;
-	public SelectTank(){
-		
+	private GamePanel gp;
+	public SelectTank(GamePanel gp){
+		this.gp=gp;
 	}
 	public void move(KeyEvent e){
 		switch (e.getKeyCode()) {
@@ -26,7 +29,7 @@ public class SelectTank {
 				break;
 			case KeyEvent.VK_Z:
 				if (index==2){
-
+					gp.setIndex(GamePanel.INDEX_MAP_EDIT);
 				}
 				break;
 		}
