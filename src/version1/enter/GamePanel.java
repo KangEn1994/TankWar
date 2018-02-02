@@ -8,6 +8,10 @@ import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import com.sun.org.apache.bcel.internal.generic.NEW;
+
+import version1.entity.GameMap;
+import version1.entity.MapEdit;
 import version1.entity.PicManager;
 import version1.entity.SelectTank;
 import version1.thread.PaintThread;
@@ -31,7 +35,16 @@ public class GamePanel extends Panel{
 	
 	//INDEX_MAP_EDIT
 	//需要一个编辑坦克，一个地图
+	private GameMap gm=null;
+	private MapEdit me=null;
 	
+	
+	public GameMap getGameMap() {
+		return gm;
+	}
+	public void setGameMap(GameMap gm) {
+		this.gm = gm;
+	}
 	public Image getOffScreenImage() {
 		return offScreenImage;
 	}
@@ -91,6 +104,16 @@ public class GamePanel extends Panel{
 	}
 	public void paintMapEdit(Graphics g){
 		
+		if (gm==null) {
+			gm=new GameMap(g);
+		}
+		if (me==null){
+			me=new MapEdit(gm);
+		}
+		gm.setGraphics(g);
+		gm.paint();
+		me.paint(g);
+		
 	}
 	public void paintBeforeGame(Graphics g){
 		
@@ -115,6 +138,12 @@ public class GamePanel extends Panel{
 						st.move(e);
 						break;
 					case GamePanel.INDEX_MAP_EDIT:
+						if (e.getKeyCode()==KeyEvent.VK_Z){
+							index=GamePanel.INDEX_GAME_START;
+							yIndex=GamePanel.GAME_HEIGHT;
+						}else{
+							me.moveAndBuild(e);
+						}
 						break;
 					case GamePanel.INDEX_BEFORE_ROOM:
 						break;

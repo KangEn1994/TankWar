@@ -30,6 +30,9 @@ public class SelectTank {
 			case KeyEvent.VK_Z:
 				if (index==2){
 					gp.setIndex(GamePanel.INDEX_MAP_EDIT);
+					//if (gp.getGameMap()==null){
+						gp.setOffScreenImage(null);
+					//}
 				}
 				break;
 		}

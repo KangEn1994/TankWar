@@ -27,8 +27,10 @@ public class TankClient extends Frame{
 		TankClient tc=new TankClient();
 		tc.showFrame();
 		GamePanel gp=new GamePanel();
+
 		gp.showPanel();
-		gp.setIndex(GamePanel.INDEX_GAME_START);
+		//gp.setIndex(GamePanel.INDEX_GAME_START);
+		gp.setIndex(GamePanel.INDEX_MAP_EDIT);
 		tc.add(gp);
 	}
 }
